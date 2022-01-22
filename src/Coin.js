@@ -23,24 +23,24 @@ const Coin = ({
         </div>
         <div className='coin-data'>
           <p className='coin-price'>${price}</p>
-          <p className='coin-volume'>${volume.toLocaleString()}</p>
 
           {priceChange1 < 0 ? (
             <p className='coin-percent red'>{priceChange1.toFixed(2)}%</p>
-          ) : (
-            <p className='coin-percent green'>{priceChange1.toFixed(2)}%</p>
-          )}
+            ) : (
+              <p className='coin-percent green'>{priceChange1.toFixed(2)}%</p>
+              )}
           {priceChange24 < 0 ? (
             <p className='coin-percent red'>{priceChange24.toFixed(2)}%</p>
-          ) : (
-            <p className='coin-percent green'>{priceChange24.toFixed(2)}%</p>
-          )}
+            ) : (
+              <p className='coin-percent green'>{priceChange24.toFixed(2)}%</p>
+              )}
           {priceChange7 < 0 ? (
             <p className='coin-percent red'>{priceChange7.toFixed(2)}%</p>
-          ) : (
-            <p className='coin-percent green'>{priceChange7.toFixed(2)}%</p>
-          )}
+            ) : (
+              <p className='coin-percent green'>{priceChange7.toFixed(2)}%</p>
+            )}
 
+              <p className='coin-volume'>${volume.toLocaleString()}</p>
           <p className='coin-marketcap'>
             ${marketcap.toLocaleString()}
           </p>

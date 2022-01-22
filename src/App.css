@@ -34,7 +34,7 @@
   color: rgb(82, 82, 82);
 }
 .coin-text-span{
-  color: rgb(0, 100, 0);
+  color: rgb(62, 170, 19);
 }
 
 .coin-input {
@@ -75,7 +75,7 @@
   text-align: right;
   justify-content: space-evenly;
   width: 100%;
-  padding-left: 60px;
+  padding-left: 50px;
   font-weight: bold;
 }
 .coin-data-header p{

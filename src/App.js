@@ -47,10 +47,10 @@ function App() {
         </div>
         <div className='coin-data-header'>
           <p>Price</p>
-          <p>Volume</p>
           <p>1h</p>
           <p>24h</p>
           <p>7d</p>
+          <p>24h Volume</p>
           <p>Market Cap</p>
         </div>
       </div>

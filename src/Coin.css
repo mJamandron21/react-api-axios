@@ -13,6 +13,12 @@
     border-bottom: 1px solid #d7d7d7;
     width: 1000px;
   }
+
+  .coin-row:hover{
+    transform: scale(1.04);
+    transition: 0.3 ease-in-out;
+    cursor: pointer;
+  }
   
   .coin {
     display: flex;

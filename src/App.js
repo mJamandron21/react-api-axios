@@ -17,7 +17,7 @@ function App() {
         console.log(res.data);
       })
       .catch(error => console.log(error));
-  }, []);
+  }, [])
 
   const handleChange = e => {
     setSearch(e.target.value);

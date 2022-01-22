@@ -44,6 +44,7 @@ const Coin = ({
           <p className='coin-marketcap'>
             ${marketcap.toLocaleString()}
           </p>
+
         </div>
       </div>
     </div>

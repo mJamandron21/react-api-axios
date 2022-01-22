@@ -10,7 +10,7 @@ function App() {
   useEffect(() => {
     axios
       .get(
-        'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false'
+        'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=true&price_change_percentage=1h%2C24h%2C7d%2C'
       )
       .then(res => {
         setCoins(res.data);
@@ -30,7 +30,7 @@ function App() {
   return (
     <div className='coin-app'>
       <div className='coin-search'>
-        <h1 className='coin-text'>Coin<span className='coin-text-span'>Gecko</span>-API</h1>
+     <h1 className='coin-text'><span><img src='./src/coingecko-icon.png' className='coin-icon' alt=''/></span>Coin<span className='coin-text-span'>Gecko</span>-API</h1>
         <form>
           <input
             className='coin-input'
@@ -40,6 +40,21 @@ function App() {
           />
         </form>
       </div>
+      <div className='heading'>
+        <div className='coin-name-header'>
+          <p>Name</p>
+          <p>Symbol</p>
+        </div>
+        <div className='coin-data-header'>
+          <p>Price</p>
+          <p>Volume</p>
+          <p>1h</p>
+          <p>24h</p>
+          <p>7d</p>
+          <p>Market Cap</p>
+        </div>
+      </div>
+
       {filteredCoins.map(coin => {
         return (
           <Coin
@@ -47,10 +62,12 @@ function App() {
             name={coin.name}
             price={coin.current_price}
             symbol={coin.symbol}
-            marketcap={coin.total_volume}
-            volume={coin.market_cap}
+            volume={coin.total_volume}
+            marketcap={coin.market_cap}
             image={coin.image}
-            priceChange={coin.price_change_percentage_24h}
+            priceChange1={coin.price_change_percentage_1h_in_currency}
+            priceChange24={coin.price_change_percentage_24h}
+            priceChange7={coin.price_change_percentage_7d_in_currency}
           />
         );
       })}

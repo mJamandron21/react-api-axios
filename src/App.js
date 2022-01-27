@@ -1,22 +1,23 @@
-import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import React, { useState, useEffect } from 'react';
 import './App.css';
-import Coin from './Coin';
+import Coin from './components/Coin';
+import { getCoinList } from './utils/getCoinList'
+
 
 function App() {
   const [coins, setCoins] = useState([]);
-  const [search, setSearch] = useState('');
+  const [search, setSearch] = useState('');  
 
-  useEffect(() => {
-    axios.get(
-        'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=true&price_change_percentage=1h%2C24h%2C7d%2C'
-      )
-      .then(res => {
-        setCoins(res.data);
-        console.log(res.data);
-      })
-      .catch(error => console.log(error));
-  }, [])
+useEffect(async () => {
+  const data = await getCoinList()
+  try{
+    setCoins(data)
+    console.log(data)
+  }catch(error){
+    console.log(error)
+  }
+}, [search])
 
   const handleChange = e => {
     setSearch(e.target.value);
@@ -34,6 +35,7 @@ function App() {
           <input
             className='coin-input'
             type='text'
+            title='searchField'
             onChange={handleChange}
             placeholder='Search'
           />
